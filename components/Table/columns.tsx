@@ -10,7 +10,34 @@ import { Button } from "../ui/button";
 import { useAppStore } from "@/store/store";
 import { DeleteModal } from "../DeleteModal";
 
+const FileName = ({ props }: { props: any }) => {
+    const [setFileId, setFileName, setIsRenameModalOpen, fileId] = useAppStore(state => [state.setFileId, state.setFilename, state.setIsRenameModalOpen, state.fileId])
+    const openRenameModal = (fileId: string, fileName: string) => {
+        setFileId(fileId);
+        setFileName(fileName);
+        setIsRenameModalOpen(true);
+    }
+    return (
+        <p className="underline flex items-center text-blue-500 hover:cursor-pointer" onClick={() => { openRenameModal(props.row.original.id as string, props.renderValue() as string) }} >
+            {props.renderValue() as string}
+            <PencilIcon size={15} className="ml-2" />
+        </p>
+    )
+}
 
+const DeleteFile = ({ props }: { props: any }) => {
+    const [setIsDeleteModalOpen, setFileId] = useAppStore(state => [state.setIsDeleteModalOpen, state.setFileId])
+
+    const openDeleteModal = (fileId: string) => {
+        setFileId(fileId);
+        setIsDeleteModalOpen(true);
+    }
+    return <Button variant={"outline"} onClick={() => {
+        openDeleteModal(props.renderValue() as string)
+    }}>
+        <TrashIcon size={20} />
+    </Button>
+}
 
 export const columns: ColumnDef<FileType>[] = [
     {
@@ -35,18 +62,10 @@ export const columns: ColumnDef<FileType>[] = [
     {
         accessorKey: `fileName`,
         header: "Filename",
-        cell: ({ renderValue, ...props }) => {
-            const [setFileId, setFileName, setIsRenameModalOpen, fileId] = useAppStore(state => [state.setFileId, state.setFilename, state.setIsRenameModalOpen, state.fileId])
-            const openRenameModal = (fileId: string, fileName: string) => {
-                setFileId(fileId);
-                setFileName(fileName);
-                setIsRenameModalOpen(true);
-            }
+        cell: (props) => {
+
             return (
-                <p className="underline flex items-center text-blue-500 hover:cursor-pointer" onClick={() => { openRenameModal(props.row.original.id as string, renderValue() as string) }} >
-                    {renderValue() as string}
-                    <PencilIcon size={15} className="ml-2" />
-                </p>
+                <FileName props={props} />
             )
         }
     },
@@ -82,18 +101,10 @@ export const columns: ColumnDef<FileType>[] = [
     {
         accessorKey: "id",
         header: "Delete",
-        cell: ({ renderValue, ...props }) => {
-            const [setIsDeleteModalOpen, setFileId] = useAppStore(state => [state.setIsDeleteModalOpen, state.setFileId])
-
-            const openDeleteModal = (fileId: string) => {
-                setFileId(fileId);
-                setIsDeleteModalOpen(true);
-            }
-            return <Button variant={"outline"} onClick={() => {
-                openDeleteModal(renderValue() as string)
-            }}>
-                <TrashIcon size={20} />
-            </Button>
+        cell: (props) => {
+            return (
+                <DeleteFile props={props} />
+            )
         }
     }
 ]
