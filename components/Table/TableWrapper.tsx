@@ -6,7 +6,7 @@ import { DataTable } from "./Table";
 import { columns } from "./columns";
 import { useUser } from "@clerk/nextjs";
 import { useEffect, useState } from "react";
-import { collection, orderBy, query } from "firebase/firestore";
+import { collection, orderBy, query, where } from "firebase/firestore";
 import { db } from "@/firebase";
 import { useCollection } from "react-firebase-hooks/firestore"
 import { Skeleton } from "../ui/skeleton";
@@ -18,10 +18,11 @@ export default function TableWraper({ skeletonFiles }: { skeletonFiles: FileType
     const [sort, setSort] = useState<"asc" | "desc">("desc")
 
     const [docs, loading, error] = useCollection(
-        user && query(collection(db, "users", user.id, "files"), orderBy("timestamp", sort)),
+        user && query(collection(db, "users", user.id, "files"), where("available", "==", true), orderBy("timestamp", sort)),
     )
 
     useEffect(() => {
+        console.log(docs, loading, error)
         if (!docs) return
         const files: FileType[] = docs.docs.map((doc) => ({
             id: doc.id,
@@ -33,7 +34,7 @@ export default function TableWraper({ skeletonFiles }: { skeletonFiles: FileType
             size: doc.data().size,
         }))
         setInitialFiles(files)
-    }, [docs])
+    }, [docs, loading, error])
 
     if (docs?.docs.length === undefined) return (
         <div className="flex flex-col">

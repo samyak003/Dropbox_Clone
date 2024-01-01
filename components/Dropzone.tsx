@@ -5,9 +5,15 @@ import { addDoc, collection, doc, serverTimestamp, updateDoc } from 'firebase/fi
 import { useState } from 'react'
 import DropzoneComponent from 'react-dropzone'
 import { db, storage } from "../firebase"
-import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
+import { getDownloadURL, ref, uploadBytes, uploadBytesResumable } from 'firebase/storage'
+import ProcessDialog from './ProcessDialog'
+import { useAppStore } from '@/store/store'
+import { toast, useToast } from './ui/use-toast'
 export default function Dropzone() {
+    const [isProcessModalOpen, setIsProcessModalOpen] = useAppStore(state => [state.isProcessModalOpen, state.setIsProcessModalOpen])
+    const { toast } = useToast()
     const [loading, setLoading] = useState(false)
+    const [percentage, setPercentage] = useState(0)
     const { isLoaded, isSignedIn, user } = useUser();
     const onDrop = (acceptedFiles: File[]) => {
         acceptedFiles.forEach(file => {
@@ -26,7 +32,7 @@ export default function Dropzone() {
         if (loading) return;
         if (!user) return;
 
-
+        setIsProcessModalOpen(true)
         setLoading(true)
         const docRef = await addDoc(collection(db, "users", user.id, "files"), {
             userId: user.id,
@@ -35,22 +41,51 @@ export default function Dropzone() {
             profileImg: user.imageUrl,
             timestamp: serverTimestamp(),
             type: selectedFile.type,
-            size: selectedFile.size
-
+            size: selectedFile.size,
+            available: false,
         });
-
         const imageRef = ref(storage, `users/${user.id}/files/${docRef.id}`)
-        await uploadBytes(imageRef, selectedFile).then(async (snapshot) => {
-            const downloadURL = await getDownloadURL(imageRef);
-            await updateDoc(doc(db, "users", user.id, "files", docRef.id), {
-                downloadURL: downloadURL,
-            })
-        })
-        setLoading(false)
+        const uploadTask = uploadBytesResumable(imageRef, selectedFile)
+
+        uploadTask.on('state_changed',
+            (snapshot) => {
+                // Observe state change events such as progress, pause, and resume
+                // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+                setPercentage((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+
+            },
+            (error) => {
+                toast({
+                    variant: "destructive",
+                    description: "Upload Failed!"
+                })
+                setIsProcessModalOpen(false)
+                setLoading(false)
+            },
+            () => {
+                // Handle successful uploads on complete
+                // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+                getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                    updateDoc(doc(db, "users", user.id, "files", docRef.id), {
+                        downloadURL: downloadURL,
+                        available: true
+                    })
+                });
+                setIsProcessModalOpen(false)
+                setPercentage(0)
+                setLoading(false)
+                toast({
+                    variant: "success",
+                    description: "Upload Successful!"
+                })
+            }
+        );
+
 
     }
 
-    const maxsize = 20971520 //20MB
+    // const maxsize = 20971520 //20MB
+    const maxsize = 104857600 //20MB
 
     return (
         <DropzoneComponent minSize={0} maxSize={maxsize} onDrop={onDrop}>
@@ -68,6 +103,7 @@ export default function Dropzone() {
                                 File is too large
                             </div>}
                         </div>
+                        <ProcessDialog percentage={percentage} />
                     </section>
                 )
             }}

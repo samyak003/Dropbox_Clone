@@ -30,7 +30,7 @@ export default function RenameModal() {
         if (!user || !fileId) return
 
         toast({
-            variant: "default",
+            variant: "success",
             description: "Renameing"
         })
 
@@ -38,7 +38,7 @@ export default function RenameModal() {
             fileName: input
         })
         toast({
-            variant: "default",
+            variant: "success",
             description: "Renamed Successfully"
         })
 

@@ -3,10 +3,10 @@ import TableWraper from "@/components/Table/TableWrapper"
 import { db } from "@/firebase"
 import { FileType } from "@/typings"
 import { auth } from "@clerk/nextjs"
-import { collection, getDocs } from "firebase/firestore"
+import { collection, getDocs, query, where } from "firebase/firestore"
 export default async function Dashboard() {
     const { userId } = auth()
-    const docResults = await getDocs(collection(db, "users", userId!, "files"))
+    const docResults = await getDocs(query(collection(db, "users", userId!, "files"), where("available", "==", true)))
 
     const skeletonFiles: FileType[] = docResults.docs.map(doc => ({
         id: doc.id,
@@ -21,7 +21,7 @@ export default async function Dashboard() {
     return (
         <div className="boder-t">
             <Dropzone />
-            <section className="container space-y-5">
+            <section className="container my-4">
                 <h1 className="font-bold">All files</h1>
                 <div className="">
                     <TableWraper skeletonFiles={skeletonFiles} />

@@ -7,6 +7,9 @@ interface AppState {
 	isRenameModalOpen: boolean;
 	setIsRenameModalOpen: (open: boolean) => void;
 
+	isProcessModalOpen: boolean;
+	setIsProcessModalOpen: (open: boolean) => void;
+
 	fileId: string | null;
 	setFileId: (fileId: string) => void;
 
@@ -23,6 +26,10 @@ export const useAppStore = create<AppState>()((set) => ({
 
 	isDeleteModalOpen: false,
 	setIsDeleteModalOpen: (open) => set((state) => ({ isDeleteModalOpen: open })),
+
+	isProcessModalOpen: false,
+	setIsProcessModalOpen: (open) =>
+		set((state) => ({ isProcessModalOpen: open })),
 
 	isRenameModalOpen: false,
 	setIsRenameModalOpen: (open) => set((state) => ({ isRenameModalOpen: open })),
