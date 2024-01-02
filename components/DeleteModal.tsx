@@ -22,7 +22,7 @@ import { useToast } from "./ui/use-toast"
 export function DeleteModal() {
     const { user } = useUser()
     const { toast } = useToast()
-    const [isDeleteModalOpen, setIsDeleteModalOpen, fileId] = useAppStore(state => [state.isDeleteModalOpen, state.setIsDeleteModalOpen, state.fileId])
+    const [isDeleteModalOpen, setIsDeleteModalOpen, fileId, totalFiles, setTotalFiles] = useAppStore(state => [state.isDeleteModalOpen, state.setIsDeleteModalOpen, state.fileId, state.totalFiles, state.setTotalFiles])
     async function deleteFile() {
         if (!user || !fileId) return
         toast({
@@ -37,6 +37,7 @@ export function DeleteModal() {
                     variant: "destructive",
                     description: "Delete Successful"
                 })
+                setTotalFiles(totalFiles - 1)
             }).finally(() => {
                 setIsDeleteModalOpen(false)
             })

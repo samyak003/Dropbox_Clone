@@ -1,6 +1,6 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
+import { connectFirestoreEmulator, getFirestore } from "firebase/firestore";
+import { connectStorageEmulator, getStorage } from "firebase/storage";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyB2tF_MVknrZH0JyuHMK6xyx49paSGn_XM",
@@ -15,5 +15,8 @@ const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 const storage = getStorage(app);
-
+if (true) {
+	connectFirestoreEmulator(db, "localhost", 8080);
+	connectStorageEmulator(storage, "localhost", 9199);
+}
 export { db, storage };

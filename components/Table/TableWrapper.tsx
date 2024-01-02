@@ -6,23 +6,43 @@ import { DataTable } from "./Table";
 import { columns } from "./columns";
 import { useUser } from "@clerk/nextjs";
 import { useEffect, useState } from "react";
-import { collection, orderBy, query, where } from "firebase/firestore";
+import { collection, count, doc, getAggregateFromServer, getDoc, orderBy, query, sum, where } from "firebase/firestore";
 import { db } from "@/firebase";
-import { useCollection } from "react-firebase-hooks/firestore"
+import { useCollection, useCollectionData, useDocumentData, } from "react-firebase-hooks/firestore"
 import { Skeleton } from "../ui/skeleton";
+import { Progress } from "../ui/progress";
+import prettyBytes from "pretty-bytes";
+import { useAppStore } from "@/store/store";
+import { StorageProgress } from "../ui/storage_progress";
 
 
-export default function TableWraper({ skeletonFiles }: { skeletonFiles: FileType[] }) {
+export default function TableWraper({ skeletonFiles, skeletonStorageDetails }: { skeletonFiles: FileType[], skeletonStorageDetails: { storageUsed: number, maxStorage: number, count: number } }) {
     const { user } = useUser();
     const [initialFiles, setInitialFiles] = useState<FileType[]>([])
     const [sort, setSort] = useState<"asc" | "desc">("desc")
-
-    const [docs, loading, error] = useCollection(
+    const [storageDetails, setStorageDetails] = useState({})
+    const [totalFiles, setTotalFiles] = useAppStore(state => [state.totalFiles, state.setTotalFiles])
+    const [docs] = useCollection(
         user && query(collection(db, "users", user.id, "files"), where("available", "==", true), orderBy("timestamp", sort)),
     )
 
     useEffect(() => {
-        console.log(docs, loading, error)
+        if (!user) return
+        const unsubscribe = async () => {
+            console.log("Update")
+            const s1 = await getAggregateFromServer(collection(db, "users", user!.id, "files"), {
+                storageUsed: sum("size"),
+                count: count(),
+            })
+            const s2 = await getDoc(doc(db, "users", user!.id))
+
+            setStorageDetails({ maxStorage: s2.data().maxStorage, count: s1.data().count, storageUsed: s1.data().storageUsed })
+        }
+        unsubscribe()
+    }, [initialFiles])
+
+
+    useEffect(() => {
         if (!docs) return
         const files: FileType[] = docs.docs.map((doc) => ({
             id: doc.id,
@@ -34,11 +54,19 @@ export default function TableWraper({ skeletonFiles }: { skeletonFiles: FileType
             size: doc.data().size,
         }))
         setInitialFiles(files)
-    }, [docs, loading, error])
+    }, [docs])
 
     if (docs?.docs.length === undefined) return (
         <div className="flex flex-col">
-            <Button variant={"outline"} className="ml-auto w-36 h-10 mb-5" onClick={() => setSort(sort === "desc" ? "asc" : "desc")}><Skeleton className="h-5 w-full" /></Button>
+            <div className="flex justify-between items-center">
+                <div className="">
+                    <Skeleton className="w-60 h-12" />
+                </div>
+                <div className="">
+                    <Button variant={"outline"} className="ml-auto w-36 h-10 mb-2" onClick={() => setSort(sort === "desc" ? "asc" : "desc")}><Skeleton className="h-5 w-full" /></Button>
+                    <Skeleton className="w-12 h-4 my-2" />
+                </div>
+            </div>
             <div className="border rounded-lg">
                 {skeletonFiles.map(file => (
                     <div className="flex items-center space-x-4 p-5 w-full" key={file.id}>
@@ -58,7 +86,18 @@ export default function TableWraper({ skeletonFiles }: { skeletonFiles: FileType
 
     return (
         <div className="flex flex-col space-y-5 pb-10">
-            <Button variant={"outline"} className="ml-auto w-fit" onClick={() => setSort(sort === "desc" ? "asc" : "desc")}>Sort By {sort === "desc" ? "Newest" : "Oldest"}</Button>
+            <div className="flex justify-between items-center">
+                <div className="w-fit">
+                    <p className="my-2">Strorage Used : {prettyBytes(storageDetails.storageUsed || 0)} out of {prettyBytes(storageDetails.maxStorage || 0)}</p>
+                    <StorageProgress value={(storageDetails.storageUsed / storageDetails.maxStorage) * 100} />
+                </div>
+                <div className="">
+                    <Button variant={"outline"} className="w-fit" onClick={() => setSort(sort === "desc" ? "asc" : "desc")}>Sort By {sort === "desc" ? "Newest" : "Oldest"}</Button>
+                    <p className="my-2">Total Files : {storageDetails.count}</p>
+
+                </div>
+
+            </div>
             <DataTable columns={columns} data={initialFiles} />
         </div>
     )

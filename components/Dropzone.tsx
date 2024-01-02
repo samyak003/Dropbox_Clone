@@ -10,7 +10,7 @@ import ProcessDialog from './ProcessDialog'
 import { useAppStore } from '@/store/store'
 import { toast, useToast } from './ui/use-toast'
 export default function Dropzone() {
-    const [isProcessModalOpen, setIsProcessModalOpen] = useAppStore(state => [state.isProcessModalOpen, state.setIsProcessModalOpen])
+    const [isProcessModalOpen, setIsProcessModalOpen, totalFiles, setTotalFiles] = useAppStore(state => [state.isProcessModalOpen, state.setIsProcessModalOpen, state.totalFiles, state.setTotalFiles])
     const { toast } = useToast()
     const [loading, setLoading] = useState(false)
     const [percentage, setPercentage] = useState(0)
@@ -74,6 +74,7 @@ export default function Dropzone() {
                 setIsProcessModalOpen(false)
                 setPercentage(0)
                 setLoading(false)
+                setTotalFiles(totalFiles + 1)
                 toast({
                     variant: "success",
                     description: "Upload Successful!"
@@ -85,10 +86,10 @@ export default function Dropzone() {
     }
 
     // const maxsize = 20971520 //20MB
-    const maxsize = 104857600 //20MB
+    const maxsize = 1048576000 //20MB
 
     return (
-        <DropzoneComponent minSize={0} maxSize={maxsize} onDrop={onDrop}>
+        <DropzoneComponent minSize={0} maxSize={maxsize} maxFiles={1} onDrop={onDrop}>
             {({ getRootProps, getInputProps, isDragActive, isDragReject, fileRejections }) => {
 
                 const isFileTooLarge = fileRejections.length > 0 && fileRejections[0].file.size > maxsize

@@ -1,0 +1,441 @@
+[debug] [2024-01-02T09:29:14.843Z] ----------------------------------------------------------------------
+[debug] [2024-01-02T09:29:14.848Z] Command:       /home/samyak/.nvm/versions/node/v21.5.0/bin/node /home/samyak/.nvm/versions/node/v21.5.0/bin/firebase emulators:start
+[debug] [2024-01-02T09:29:14.848Z] CLI Version:   13.0.2
+[debug] [2024-01-02T09:29:14.849Z] Platform:      linux
+[debug] [2024-01-02T09:29:14.849Z] Node Version:  v21.5.0
+[debug] [2024-01-02T09:29:14.849Z] Time:          Tue Jan 02 2024 14:59:14 GMT+0530 (India Standard Time)
+[debug] [2024-01-02T09:29:14.849Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-02T09:29:14.852Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-01-02T09:29:14.968Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-02T09:29:14.969Z] > authorizing via signed-in user (samyakjain003@gmail.com)
+[debug] [2024-01-02T09:29:15.261Z] openjdk version "18.0.2" 2022-07-19
+OpenJDK Runtime Environment Homebrew (build 18.0.2+0)
+OpenJDK 64-Bit Server VM Homebrew (build 18.0.2+0, mixed mode, sharing)
+
+[debug] [2024-01-02T09:29:15.267Z] Parsed Java major version: 18
+[info] i  emulators: Starting emulators: firestore, hosting, storage {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: firestore, hosting, storage"}}
+[debug] [2024-01-02T09:29:15.273Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"storage":[{"address":"127.0.0.1","family":"IPv4","port":9199}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[warn] ⚠  emulators: It seems that you are running multiple instances of the emulator suite for project dropbox-clone-b7ce5. This may result in unexpected behavior. 
+[debug] [2024-01-02T09:29:15.284Z] [hub] writing locator at /tmp/hub-dropbox-clone-b7ce5.json
+[debug] [2024-01-02T09:29:15.302Z] > refreshing access token with scopes: []
+[debug] [2024-01-02T09:29:15.304Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-01-02T09:29:15.305Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-01-02T09:29:16.342Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-01-02T09:29:16.342Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-01-02T09:29:16.595Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5 [none]
+[debug] [2024-01-02T09:29:16.989Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2024-01-02T09:29:16.989Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2024-01-02T09:29:17.504Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5 200
+[debug] [2024-01-02T09:29:17.505Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5 {"projectId":"dropbox-clone-b7ce5","projectNumber":"366336838373","displayName":"dropbox-clone","name":"projects/dropbox-clone-b7ce5","resources":{"hostingSite":"dropbox-clone-b7ce5","storageBucket":"dropbox-clone-b7ce5.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_151c7233-ab3e-40c9-adb4-eca1776b0a56"}
+[debug] [2024-01-02T09:29:23.770Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5/sites pageToken=&pageSize=10
+[debug] [2024-01-02T09:29:25.619Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5/sites 200
+[debug] [2024-01-02T09:29:25.619Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5/sites {"sites":[{"name":"projects/dropbox-clone-b7ce5/sites/dropbox-clone-b7ce5","defaultUrl":"https://dropbox-clone-b7ce5.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-01-02T09:29:25.620Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5/sites 
+[debug] [2024-01-02T09:29:26.539Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5/sites 200
+[debug] [2024-01-02T09:29:26.540Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5/sites {"sites":[{"name":"projects/dropbox-clone-b7ce5/sites/dropbox-clone-b7ce5","defaultUrl":"https://dropbox-clone-b7ce5.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-01-02T09:29:26.540Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5/webApps/-/config [none]
+[debug] [2024-01-02T09:29:27.955Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5/webApps/-/config 200
+[debug] [2024-01-02T09:29:27.956Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5/webApps/-/config {"projectId":"dropbox-clone-b7ce5","appId":"1:366336838373:web:0309902951029ed4b9620c","storageBucket":"dropbox-clone-b7ce5.appspot.com","locationId":"us-central","apiKey":"AIzaSyB2tF_MVknrZH0JyuHMK6xyx49paSGn_XM","authDomain":"dropbox-clone-b7ce5.firebaseapp.com","messagingSenderId":"366336838373"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[warn] ⚠  This integration expects Node version 16, 18, or 20. You're running version 21, problems may be encountered. 
+[debug] [2024-01-02T09:30:18.043Z] [web frameworks] effective firebase.json:  {
+  "hosting": [
+    {
+      "source": ".",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "frameworksBackend": {
+        "region": "asia-east1"
+      },
+      "site": "dropbox-clone-b7ce5",
+      "rewrites": [
+        {
+          "source": "**",
+          "function": {
+            "functionId": "ssrdropboxcloneb7ce5",
+            "region": "asia-east1",
+            "pinTag": true
+          }
+        }
+      ],
+      "redirects": [],
+      "headers": [
+        {
+          "source": "**/*.[jt]s",
+          "headers": [
+            {
+              "key": "Set-Cookie",
+              "value": "__FIREBASE_DEFAULTS__=eyJlbXVsYXRvckhvc3RzIjp7ImZpcmVzdG9yZSI6IjEyNy4wLjAuMTo4MDgwIiwic3RvcmFnZSI6IjEyNy4wLjAuMTo5MTk5In0sImNvbmZpZyI6eyJwcm9qZWN0SWQiOiJkcm9wYm94LWNsb25lLWI3Y2U1IiwiYXBwSWQiOiIxOjM2NjMzNjgzODM3Mzp3ZWI6MDMwOTkwMjk1MTAyOWVkNGI5NjIwYyIsInN0b3JhZ2VCdWNrZXQiOiJkcm9wYm94LWNsb25lLWI3Y2U1LmFwcHNwb3QuY29tIiwibG9jYXRpb25JZCI6InVzLWNlbnRyYWwiLCJhcGlLZXkiOiJBSXphU3lCMnRGX01Wa25yWkgwSnl1SE1LNnh5eDQ5cGFTR25fWE0iLCJhdXRoRG9tYWluIjoiZHJvcGJveC1jbG9uZS1iN2NlNS5maXJlYmFzZWFwcC5jb20iLCJtZXNzYWdpbmdTZW5kZXJJZCI6IjM2NjMzNjgzODM3MyJ9LCJfYXV0aFRva2VuU3luY1VSTCI6Ii9fX3Nlc3Npb24ifQ; SameSite=Strict; Expires=2025-11-26T20:10:18.043Z; Path=/;"
+            }
+          ]
+        }
+      ],
+      "cleanUrls": true,
+      "public": "public",
+      "webFramework": "next_ssr"
+    }
+  ],
+  "functions": [
+    {
+      "source": ".firebase/dropbox-clone-b7ce5/functions",
+      "codebase": "firebase-frameworks-dropbox-clone-b7ce5"
+    }
+  ]
+}
+[debug] [2024-01-02T09:30:18.053Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"storage":[{"address":"127.0.0.1","family":"IPv4","port":9199}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, database, pubsub {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, database, pubsub\u001b[22m"}}
+[debug] [2024-01-02T09:30:18.062Z] defaultcredentials: writing to file /home/samyak/.config/firebase/samyakjain003_gmail_com_application_default_credentials.json
+[debug] [2024-01-02T09:30:18.067Z] Setting GAC to /home/samyak/.config/firebase/samyakjain003_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /home/samyak/.config/firebase/samyakjain003_gmail_com_application_default_credentials.json"}}
+[debug] [2024-01-02T09:30:18.070Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5/adminSdkConfig [none]
+[debug] [2024-01-02T09:30:19.860Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5/adminSdkConfig 200
+[debug] [2024-01-02T09:30:19.860Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5/adminSdkConfig {"projectId":"dropbox-clone-b7ce5","storageBucket":"dropbox-clone-b7ce5.appspot.com","locationId":"us-central"}
+[debug] [2024-01-02T09:30:19.885Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2024-01-02T09:30:19.885Z] Ignoring unsupported arg: single_project_mode_error {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: single_project_mode_error"}}
+[debug] [2024-01-02T09:30:19.885Z] Starting Firestore Emulator with command {"binary":"java","args":["-Djava.net.preferIPv4Stack=true","-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","/home/samyak/.cache/firebase/emulators/cloud-firestore-emulator-v1.18.2.jar","--host","127.0.0.1","--port",8080,"--websocket_port",9150,"--project_id","dropbox-clone-b7ce5","--rules","/home/samyak/next/dropbox_clone/firestore.rules","--single_project_mode",true,"--functions_emulator","127.0.0.1:5001"],"optionalArgs":["port","webchannel_port","host","rules","websocket_port","functions_emulator","seed_from_export","project_id","single_project_mode"],"joinArgs":false} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Djava.net.preferIPv4Stack=true\",\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"/home/samyak/.cache/firebase/emulators/cloud-firestore-emulator-v1.18.2.jar\",\"--host\",\"127.0.0.1\",\"--port\",8080,\"--websocket_port\",9150,\"--project_id\",\"dropbox-clone-b7ce5\",\"--rules\",\"/home/samyak/next/dropbox_clone/firestore.rules\",\"--single_project_mode\",true,\"--functions_emulator\",\"127.0.0.1:5001\"],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"websocket_port\",\"functions_emulator\",\"seed_from_export\",\"project_id\",\"single_project_mode\"],\"joinArgs\":false}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[debug] [2024-01-02T09:30:21.923Z] Jan 02, 2024 3:00:21 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start
+INFO: Started WebSocket server on ws://127.0.0.1:9150
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:00:21 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start\nINFO: Started WebSocket server on ws://127.0.0.1:9150\n"}}
+[debug] [2024-01-02T09:30:21.975Z] API endpoint: http:// {"metadata":{"emulator":{"name":"firestore"},"message":"API endpoint: http://"}}
+[debug] [2024-01-02T09:30:21.975Z] 127.0.0.1:8080
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080
+
+Dev App Server is now running.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"127.0.0.1:8080\nIf you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:\n\n   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080\n\nDev App Server is now running.\n\n"}}
+[info] ✔  firestore: Firestore Emulator UI websocket is running on 9150. {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator UI websocket is running on 9150."}}
+[debug] [2024-01-02T09:30:22.159Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"storage"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2024-01-02T09:30:23.800Z] Temp file directory for storage emulator: /tmp/firebase/storage/blobs {"metadata":{"emulator":{"name":"storage"},"message":"Temp file directory for storage emulator: /tmp/firebase/storage/blobs"}}
+[debug] [2024-01-02T09:30:23.814Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5/sites 
+[debug] [2024-01-02T09:30:25.211Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5/sites 200
+[debug] [2024-01-02T09:30:25.211Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5/sites {"sites":[{"name":"projects/dropbox-clone-b7ce5/sites/dropbox-clone-b7ce5","defaultUrl":"https://dropbox-clone-b7ce5.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-01-02T09:30:25.212Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5/webApps/-/config [none]
+[debug] [2024-01-02T09:30:26.549Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5/webApps/-/config 200
+[debug] [2024-01-02T09:30:26.549Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dropbox-clone-b7ce5/webApps/-/config {"projectId":"dropbox-clone-b7ce5","appId":"1:366336838373:web:0309902951029ed4b9620c","storageBucket":"dropbox-clone-b7ce5.appspot.com","locationId":"us-central","apiKey":"AIzaSyB2tF_MVknrZH0JyuHMK6xyx49paSGn_XM","authDomain":"dropbox-clone-b7ce5.firebaseapp.com","messagingSenderId":"366336838373"}
+[info] i  hosting[dropbox-clone-b7ce5]: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] ✔  hosting[dropbox-clone-b7ce5]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[debug] [2024-01-02T09:30:26.581Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2024-01-02T09:30:26.582Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2024-01-02T09:30:26.582Z] Starting Emulator UI with command {"binary":"node","args":["/home/samyak/.cache/firebase/emulators/ui-v1.11.7/server/server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/home/samyak/.cache/firebase/emulators/ui-v1.11.7/server/server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2024-01-02T09:30:26.757Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[info] i  functions: Watching "/home/samyak/next/dropbox_clone/.firebase/dropbox-clone-b7ce5/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/home/samyak/next/dropbox_clone/.firebase/dropbox-clone-b7ce5/functions\" for Cloud Functions..."}}
+[debug] [2024-01-02T09:30:26.847Z] Validating nodejs source
+[debug] [2024-01-02T09:30:27.987Z] > [functions] package.json contents: {
+  "main": "server.js",
+  "dependencies": {
+    "firebase-frameworks": "^0.11.0",
+    "firebase-functions": "^4.5.0",
+    "firebase-admin": "^11.11.1"
+  },
+  "engines": {
+    "node": "20"
+  }
+}
+[debug] [2024-01-02T09:30:27.987Z] Building nodejs source
+[debug] [2024-01-02T09:30:27.987Z] Failed to find version of module node: reached end of search path /home/samyak/next/dropbox_clone/.firebase/dropbox-clone-b7ce5/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "20" doesn't match your global version "21". Using node@21 from host. 
+[info] i  functions: Loaded environment variables from .env, .env.local. 
+[debug] [2024-01-02T09:30:27.993Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-01-02T09:30:28.001Z] Found firebase-functions binary at '/home/samyak/next/dropbox_clone/.firebase/dropbox-clone-b7ce5/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8804
+
+[debug] [2024-01-02T09:30:28.723Z] Got response from /__/functions.yaml {"endpoints":{"ssrdropboxcloneb7ce5":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["asia-east1"],"labels":{},"httpsTrigger":{},"entryPoint":"ssrdropboxcloneb7ce5"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: ssrdropboxcloneb7ce5. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: ssrdropboxcloneb7ce5."}}
+[info] ✔  functions[asia-east1-ssrdropboxcloneb7ce5]: http function initialized (http://127.0.0.1:5001/dropbox-clone-b7ce5/asia-east1/ssrdropboxcloneb7ce5). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/dropbox-clone-b7ce5/asia-east1/ssrdropboxcloneb7ce5)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Firestore │ 127.0.0.1:8080 │ http://127.0.0.1:4000/firestore │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Hosting   │ 127.0.0.1:5000 │ n/a                             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Storage   │ 127.0.0.1:9199 │ http://127.0.0.1:4000/storage   │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500, 9150
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2024-01-02T09:30:41.696Z] Jan 02, 2024 3:00:41 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:00:41 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[debug] [2024-01-02T09:30:41.916Z] Jan 02, 2024 3:00:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:00:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:30:41.928Z] Jan 02, 2024 3:00:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:00:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:30:42.291Z] Jan 02, 2024 3:00:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:00:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:30:43.971Z] Jan 02, 2024 3:00:43 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:00:43 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:30:44.191Z] Jan 02, 2024 3:00:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:00:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:31:00.110Z] Jan 02, 2024 3:01:00 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:01:00 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:31:41.047Z] Jan 02, 2024 3:01:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:01:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:31:41.083Z] Jan 02, 2024 3:01:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Jan 02, 2024 3:01:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:01:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\nJan 02, 2024 3:01:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:31:44.295Z] Jan 02, 2024 3:01:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:01:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:31:47.573Z] Jan 02, 2024 3:01:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:01:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:31:47.575Z] Jan 02, 2024 3:01:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:01:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:31:47.576Z] Jan 02, 2024 3:01:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:01:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:31:55.620Z] Jan 02, 2024 3:01:55 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Jan 02, 2024 3:01:55 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Jan 02, 2024 3:01:55 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:01:55 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\nJan 02, 2024 3:01:55 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\nJan 02, 2024 3:01:55 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:33:00.202Z] Jan 02, 2024 3:03:00 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:03:00 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:34:00.253Z] Jan 02, 2024 3:04:00 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:04:00 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:34:34.688Z] Jan 02, 2024 3:04:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:04:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:34:38.001Z] Jan 02, 2024 3:04:37 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:04:37 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:34:38.254Z] Jan 02, 2024 3:04:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:04:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:34:38.634Z] Jan 02, 2024 3:04:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:04:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:34:38.636Z] Jan 02, 2024 3:04:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:04:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:34:39.071Z] Jan 02, 2024 3:04:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:04:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:34:54.646Z] Jan 02, 2024 3:04:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:04:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:34:54.647Z] Jan 02, 2024 3:04:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Jan 02, 2024 3:04:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:04:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\nJan 02, 2024 3:04:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:34:57.893Z] Jan 02, 2024 3:04:57 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:04:57 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:34:58.217Z] Jan 02, 2024 3:04:58 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:04:58 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:34:58.555Z] Jan 02, 2024 3:04:58 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:04:58 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:34:58.868Z] Jan 02, 2024 3:04:58 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:04:58 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:34:59.119Z] Jan 02, 2024 3:04:59 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:04:59 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:34:59.257Z] Jan 02, 2024 3:04:59 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:04:59 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:34:59.459Z] Jan 02, 2024 3:04:59 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:04:59 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:34:59.540Z] Jan 02, 2024 3:04:59 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:04:59 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:34:59.994Z] Jan 02, 2024 3:04:59 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:04:59 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:34:59.999Z] Jan 02, 2024 3:04:59 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Jan 02, 2024 3:04:59 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:04:59 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\nJan 02, 2024 3:04:59 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:35:05.466Z] Jan 02, 2024 3:05:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:05:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:35:16.105Z] Jan 02, 2024 3:05:16 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:05:16 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:35:16.435Z] Jan 02, 2024 3:05:16 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:05:16 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:35:16.762Z] Jan 02, 2024 3:05:16 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:05:16 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:35:35.278Z] >>> [apiv2][query] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast [none]
+[debug] [2024-01-02T09:35:35.278Z] >>> [apiv2][body] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast {"eventId":"1704188135276","timestamp":"2024-01-02T09:35:35.276Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/dropbox-clone-b7ce5.appspot.com/objects/users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/Om8qHeanCKlgd09sngCx","type":"storage#object"},"data":{"kind":"storage#object","name":"users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/Om8qHeanCKlgd09sngCx","bucket":"dropbox-clone-b7ce5.appspot.com","generation":"1704188132158","metageneration":"1","contentType":"video/mp4","timeCreated":"2024-01-02T09:35:32.158Z","updated":"2024-01-02T09:35:32.158Z","storageClass":"STANDARD","size":"349236442","md5Hash":"4kLg+0QPQeY1r2Rba/rS7A==","etag":"qbl16vLo8MvkHqMj2vHlACiru78","metadata":{"firebaseStorageDownloadTokens":"8bc82ce3-73bf-4112-b511-a94f7574b869"},"crc32c":"gzh/ow==","timeStorageClassUpdated":"2024-01-02T09:35:32.158Z","id":"dropbox-clone-b7ce5.appspot.com/users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/Om8qHeanCKlgd09sngCx/1704188132158","selfLink":"http://127.0.0.1:9199/storage/v1/b/dropbox-clone-b7ce5.appspot.com/o/users%2Fuser_2a4t3ANML32D8PlpEebOG1m6n6w%2Ffiles%2FOm8qHeanCKlgd09sngCx","mediaLink":"http://127.0.0.1:9199/download/storage/v1/b/dropbox-clone-b7ce5.appspot.com/o/users%2Fuser_2a4t3ANML32D8PlpEebOG1m6n6w%2Ffiles%2FOm8qHeanCKlgd09sngCx?generation=1704188132158&alt=media"}}
+[debug] [2024-01-02T09:35:35.304Z] <<< [apiv2][status] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast 200
+[debug] [2024-01-02T09:35:35.304Z] <<< [apiv2][body] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2024-01-02T09:35:35.305Z] >>> [apiv2][query] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast [none]
+[debug] [2024-01-02T09:35:35.306Z] >>> [apiv2][body] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast {"specversion":"1.0","id":"64694ffb-24e3-4ff9-97ca-ea5a0546ec75","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/dropbox-clone-b7ce5.appspot.com/objects/users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/Om8qHeanCKlgd09sngCx","time":"2024-01-02T09:35:32.158Z","data":{"kind":"storage#object","name":"users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/Om8qHeanCKlgd09sngCx","bucket":"dropbox-clone-b7ce5.appspot.com","generation":"1704188132158","metageneration":"1","contentType":"video/mp4","timeCreated":"2024-01-02T09:35:32.158Z","updated":"2024-01-02T09:35:32.158Z","storageClass":"STANDARD","size":"349236442","md5Hash":"4kLg+0QPQeY1r2Rba/rS7A==","etag":"qbl16vLo8MvkHqMj2vHlACiru78","metadata":{"firebaseStorageDownloadTokens":"8bc82ce3-73bf-4112-b511-a94f7574b869"},"crc32c":"gzh/ow==","timeStorageClassUpdated":"2024-01-02T09:35:32.158Z","id":"dropbox-clone-b7ce5.appspot.com/users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/Om8qHeanCKlgd09sngCx/1704188132158","selfLink":"http://127.0.0.1:9199/storage/v1/b/dropbox-clone-b7ce5.appspot.com/o/users%2Fuser_2a4t3ANML32D8PlpEebOG1m6n6w%2Ffiles%2FOm8qHeanCKlgd09sngCx","mediaLink":"http://127.0.0.1:9199/download/storage/v1/b/dropbox-clone-b7ce5.appspot.com/o/users%2Fuser_2a4t3ANML32D8PlpEebOG1m6n6w%2Ffiles%2FOm8qHeanCKlgd09sngCx?generation=1704188132158&alt=media"}}
+[debug] [2024-01-02T09:35:35.314Z] <<< [apiv2][status] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast 200
+[debug] [2024-01-02T09:35:35.314Z] <<< [apiv2][body] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2024-01-02T09:35:37.354Z] Jan 02, 2024 3:05:37 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:05:37 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:35:37.704Z] Jan 02, 2024 3:05:37 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:05:37 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:35:38.098Z] Jan 02, 2024 3:05:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:05:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:35:38.101Z] Jan 02, 2024 3:05:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:05:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:35:38.492Z] Jan 02, 2024 3:05:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:05:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:35:45.189Z] Jan 02, 2024 3:05:45 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:05:45 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:35:52.196Z] Jan 02, 2024 3:05:52 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:05:52 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:01.328Z] >>> [apiv2][query] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast [none]
+[debug] [2024-01-02T09:36:01.329Z] >>> [apiv2][body] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast {"eventId":"1704188161328","timestamp":"2024-01-02T09:36:01.328Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/dropbox-clone-b7ce5.appspot.com/objects/users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/u5fCqPlcMIyK6O0KVl6T","type":"storage#object"},"data":{"kind":"storage#object","name":"users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/u5fCqPlcMIyK6O0KVl6T","bucket":"dropbox-clone-b7ce5.appspot.com","generation":"1704188160393","metageneration":"1","contentType":"video/mp4","timeCreated":"2024-01-02T09:36:00.393Z","updated":"2024-01-02T09:36:00.393Z","storageClass":"STANDARD","size":"174644864","md5Hash":"QZ9Thk98lgiOJpiXO/W9UQ==","etag":"BqszDVtdJPhqPP0Awi7kQIXEFVE","metadata":{"firebaseStorageDownloadTokens":"db77d58e-0de5-4c76-be41-3570cbc98015"},"crc32c":"Lzwgww==","timeStorageClassUpdated":"2024-01-02T09:36:00.393Z","id":"dropbox-clone-b7ce5.appspot.com/users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/u5fCqPlcMIyK6O0KVl6T/1704188160393","selfLink":"http://127.0.0.1:9199/storage/v1/b/dropbox-clone-b7ce5.appspot.com/o/users%2Fuser_2a4t3ANML32D8PlpEebOG1m6n6w%2Ffiles%2Fu5fCqPlcMIyK6O0KVl6T","mediaLink":"http://127.0.0.1:9199/download/storage/v1/b/dropbox-clone-b7ce5.appspot.com/o/users%2Fuser_2a4t3ANML32D8PlpEebOG1m6n6w%2Ffiles%2Fu5fCqPlcMIyK6O0KVl6T?generation=1704188160393&alt=media"}}
+[debug] [2024-01-02T09:36:01.620Z] <<< [apiv2][status] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast 200
+[debug] [2024-01-02T09:36:01.621Z] <<< [apiv2][body] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2024-01-02T09:36:01.621Z] >>> [apiv2][query] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast [none]
+[debug] [2024-01-02T09:36:01.622Z] >>> [apiv2][body] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast {"specversion":"1.0","id":"2c4cb2b6-65fb-4c89-9f5d-1f2cb154c9c9","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/dropbox-clone-b7ce5.appspot.com/objects/users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/u5fCqPlcMIyK6O0KVl6T","time":"2024-01-02T09:36:00.393Z","data":{"kind":"storage#object","name":"users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/u5fCqPlcMIyK6O0KVl6T","bucket":"dropbox-clone-b7ce5.appspot.com","generation":"1704188160393","metageneration":"1","contentType":"video/mp4","timeCreated":"2024-01-02T09:36:00.393Z","updated":"2024-01-02T09:36:00.393Z","storageClass":"STANDARD","size":"174644864","md5Hash":"QZ9Thk98lgiOJpiXO/W9UQ==","etag":"BqszDVtdJPhqPP0Awi7kQIXEFVE","metadata":{"firebaseStorageDownloadTokens":"db77d58e-0de5-4c76-be41-3570cbc98015"},"crc32c":"Lzwgww==","timeStorageClassUpdated":"2024-01-02T09:36:00.393Z","id":"dropbox-clone-b7ce5.appspot.com/users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/u5fCqPlcMIyK6O0KVl6T/1704188160393","selfLink":"http://127.0.0.1:9199/storage/v1/b/dropbox-clone-b7ce5.appspot.com/o/users%2Fuser_2a4t3ANML32D8PlpEebOG1m6n6w%2Ffiles%2Fu5fCqPlcMIyK6O0KVl6T","mediaLink":"http://127.0.0.1:9199/download/storage/v1/b/dropbox-clone-b7ce5.appspot.com/o/users%2Fuser_2a4t3ANML32D8PlpEebOG1m6n6w%2Ffiles%2Fu5fCqPlcMIyK6O0KVl6T?generation=1704188160393&alt=media"}}
+[debug] [2024-01-02T09:36:01.625Z] <<< [apiv2][status] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast 200
+[debug] [2024-01-02T09:36:01.625Z] <<< [apiv2][body] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2024-01-02T09:36:07.897Z] Jan 02, 2024 3:06:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:08.611Z] Jan 02, 2024 3:06:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:08.784Z] Jan 02, 2024 3:06:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:09.457Z] Jan 02, 2024 3:06:09 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:09 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:09.874Z] Jan 02, 2024 3:06:09 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:09 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:16.903Z] Jan 02, 2024 3:06:16 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:16 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:17.231Z] Jan 02, 2024 3:06:17 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:17 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:17.587Z] Jan 02, 2024 3:06:17 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:17 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:17.898Z] Jan 02, 2024 3:06:17 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:17 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:18.087Z] Jan 02, 2024 3:06:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:18.288Z] Jan 02, 2024 3:06:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:18.429Z] Jan 02, 2024 3:06:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:18.521Z] Jan 02, 2024 3:06:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:22.268Z] >>> [apiv2][query] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast [none]
+[debug] [2024-01-02T09:36:22.268Z] >>> [apiv2][body] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast {"eventId":"1704188182268","timestamp":"2024-01-02T09:36:22.268Z","eventType":"google.storage.object.delete","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/dropbox-clone-b7ce5.appspot.com/objects/users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/Om8qHeanCKlgd09sngCx","type":"storage#object"},"data":{"kind":"storage#object","name":"users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/Om8qHeanCKlgd09sngCx","bucket":"dropbox-clone-b7ce5.appspot.com","generation":"1704188132158","metageneration":"1","contentType":"video/mp4","contentDisposition":"inline","timeCreated":"2024-01-02T09:35:32.158Z","updated":"2024-01-02T09:35:32.158Z","storageClass":"STANDARD","size":"349236442","md5Hash":"4kLg+0QPQeY1r2Rba/rS7A==","etag":"qbl16vLo8MvkHqMj2vHlACiru78","metadata":{"firebaseStorageDownloadTokens":"8bc82ce3-73bf-4112-b511-a94f7574b869"},"crc32c":"gzh/ow==","timeStorageClassUpdated":"2024-01-02T09:35:32.158Z","id":"dropbox-clone-b7ce5.appspot.com/users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/Om8qHeanCKlgd09sngCx/1704188132158","selfLink":"http://127.0.0.1:9199/storage/v1/b/dropbox-clone-b7ce5.appspot.com/o/users%2Fuser_2a4t3ANML32D8PlpEebOG1m6n6w%2Ffiles%2FOm8qHeanCKlgd09sngCx","mediaLink":"http://127.0.0.1:9199/download/storage/v1/b/dropbox-clone-b7ce5.appspot.com/o/users%2Fuser_2a4t3ANML32D8PlpEebOG1m6n6w%2Ffiles%2FOm8qHeanCKlgd09sngCx?generation=1704188132158&alt=media"}}
+[debug] [2024-01-02T09:36:22.273Z] <<< [apiv2][status] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast 200
+[debug] [2024-01-02T09:36:22.273Z] <<< [apiv2][body] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2024-01-02T09:36:22.274Z] >>> [apiv2][query] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast [none]
+[debug] [2024-01-02T09:36:22.274Z] >>> [apiv2][body] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast {"specversion":"1.0","id":"ba922e2a-7f77-44c9-b5c4-87bddc9c7342","type":"google.cloud.storage.object.v1.deleted","source":"//storage.googleapis.com/projects/_/buckets/dropbox-clone-b7ce5.appspot.com/objects/users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/Om8qHeanCKlgd09sngCx","time":"2024-01-02T09:35:32.158Z","data":{"kind":"storage#object","name":"users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/Om8qHeanCKlgd09sngCx","bucket":"dropbox-clone-b7ce5.appspot.com","generation":"1704188132158","metageneration":"1","contentType":"video/mp4","contentDisposition":"inline","timeCreated":"2024-01-02T09:35:32.158Z","updated":"2024-01-02T09:35:32.158Z","storageClass":"STANDARD","size":"349236442","md5Hash":"4kLg+0QPQeY1r2Rba/rS7A==","etag":"qbl16vLo8MvkHqMj2vHlACiru78","metadata":{"firebaseStorageDownloadTokens":"8bc82ce3-73bf-4112-b511-a94f7574b869"},"crc32c":"gzh/ow==","timeStorageClassUpdated":"2024-01-02T09:35:32.158Z","id":"dropbox-clone-b7ce5.appspot.com/users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/Om8qHeanCKlgd09sngCx/1704188132158","selfLink":"http://127.0.0.1:9199/storage/v1/b/dropbox-clone-b7ce5.appspot.com/o/users%2Fuser_2a4t3ANML32D8PlpEebOG1m6n6w%2Ffiles%2FOm8qHeanCKlgd09sngCx","mediaLink":"http://127.0.0.1:9199/download/storage/v1/b/dropbox-clone-b7ce5.appspot.com/o/users%2Fuser_2a4t3ANML32D8PlpEebOG1m6n6w%2Ffiles%2FOm8qHeanCKlgd09sngCx?generation=1704188132158&alt=media"}}
+[debug] [2024-01-02T09:36:22.277Z] <<< [apiv2][status] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast 200
+[debug] [2024-01-02T09:36:22.277Z] <<< [apiv2][body] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2024-01-02T09:36:22.620Z] Jan 02, 2024 3:06:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:22.630Z] Jan 02, 2024 3:06:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:23.023Z] Jan 02, 2024 3:06:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:23.347Z] Jan 02, 2024 3:06:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:25.852Z] >>> [apiv2][query] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast [none]
+[debug] [2024-01-02T09:36:25.852Z] >>> [apiv2][body] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast {"eventId":"1704188185852","timestamp":"2024-01-02T09:36:25.852Z","eventType":"google.storage.object.delete","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/dropbox-clone-b7ce5.appspot.com/objects/users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/u5fCqPlcMIyK6O0KVl6T","type":"storage#object"},"data":{"kind":"storage#object","name":"users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/u5fCqPlcMIyK6O0KVl6T","bucket":"dropbox-clone-b7ce5.appspot.com","generation":"1704188160393","metageneration":"1","contentType":"video/mp4","contentDisposition":"inline","timeCreated":"2024-01-02T09:36:00.393Z","updated":"2024-01-02T09:36:00.393Z","storageClass":"STANDARD","size":"174644864","md5Hash":"QZ9Thk98lgiOJpiXO/W9UQ==","etag":"BqszDVtdJPhqPP0Awi7kQIXEFVE","metadata":{"firebaseStorageDownloadTokens":"db77d58e-0de5-4c76-be41-3570cbc98015"},"crc32c":"Lzwgww==","timeStorageClassUpdated":"2024-01-02T09:36:00.393Z","id":"dropbox-clone-b7ce5.appspot.com/users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/u5fCqPlcMIyK6O0KVl6T/1704188160393","selfLink":"http://127.0.0.1:9199/storage/v1/b/dropbox-clone-b7ce5.appspot.com/o/users%2Fuser_2a4t3ANML32D8PlpEebOG1m6n6w%2Ffiles%2Fu5fCqPlcMIyK6O0KVl6T","mediaLink":"http://127.0.0.1:9199/download/storage/v1/b/dropbox-clone-b7ce5.appspot.com/o/users%2Fuser_2a4t3ANML32D8PlpEebOG1m6n6w%2Ffiles%2Fu5fCqPlcMIyK6O0KVl6T?generation=1704188160393&alt=media"}}
+[debug] [2024-01-02T09:36:25.856Z] <<< [apiv2][status] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast 200
+[debug] [2024-01-02T09:36:25.856Z] <<< [apiv2][body] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2024-01-02T09:36:25.856Z] >>> [apiv2][query] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast [none]
+[debug] [2024-01-02T09:36:25.856Z] >>> [apiv2][body] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast {"specversion":"1.0","id":"f61ab839-f99e-44b6-b5b6-76d626953a87","type":"google.cloud.storage.object.v1.deleted","source":"//storage.googleapis.com/projects/_/buckets/dropbox-clone-b7ce5.appspot.com/objects/users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/u5fCqPlcMIyK6O0KVl6T","time":"2024-01-02T09:36:00.393Z","data":{"kind":"storage#object","name":"users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/u5fCqPlcMIyK6O0KVl6T","bucket":"dropbox-clone-b7ce5.appspot.com","generation":"1704188160393","metageneration":"1","contentType":"video/mp4","contentDisposition":"inline","timeCreated":"2024-01-02T09:36:00.393Z","updated":"2024-01-02T09:36:00.393Z","storageClass":"STANDARD","size":"174644864","md5Hash":"QZ9Thk98lgiOJpiXO/W9UQ==","etag":"BqszDVtdJPhqPP0Awi7kQIXEFVE","metadata":{"firebaseStorageDownloadTokens":"db77d58e-0de5-4c76-be41-3570cbc98015"},"crc32c":"Lzwgww==","timeStorageClassUpdated":"2024-01-02T09:36:00.393Z","id":"dropbox-clone-b7ce5.appspot.com/users/user_2a4t3ANML32D8PlpEebOG1m6n6w/files/u5fCqPlcMIyK6O0KVl6T/1704188160393","selfLink":"http://127.0.0.1:9199/storage/v1/b/dropbox-clone-b7ce5.appspot.com/o/users%2Fuser_2a4t3ANML32D8PlpEebOG1m6n6w%2Ffiles%2Fu5fCqPlcMIyK6O0KVl6T","mediaLink":"http://127.0.0.1:9199/download/storage/v1/b/dropbox-clone-b7ce5.appspot.com/o/users%2Fuser_2a4t3ANML32D8PlpEebOG1m6n6w%2Ffiles%2Fu5fCqPlcMIyK6O0KVl6T?generation=1704188160393&alt=media"}}
+[debug] [2024-01-02T09:36:25.861Z] <<< [apiv2][status] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast 200
+[debug] [2024-01-02T09:36:25.861Z] <<< [apiv2][body] POST http://127.0.0.1:5001/functions/projects/dropbox-clone-b7ce5/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2024-01-02T09:36:26.191Z] Jan 02, 2024 3:06:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:26.208Z] Jan 02, 2024 3:06:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:26.518Z] Jan 02, 2024 3:06:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:26.597Z] Jan 02, 2024 3:06:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:38.203Z] Jan 02, 2024 3:06:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:36:56.537Z] Jan 02, 2024 3:06:56 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:06:56 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:37:12.505Z] Jan 02, 2024 3:07:12 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:07:12 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:37:27.504Z] Jan 02, 2024 3:07:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:07:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2024-01-02T09:37:27.519Z] Jan 02, 2024 3:07:27 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:07:27 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose\nINFO: channel closed\n"}}
+[debug] [2024-01-02T09:37:38.219Z] Jan 02, 2024 3:07:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Jan 02, 2024 3:07:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}

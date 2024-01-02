@@ -15,6 +15,9 @@ interface AppState {
 
 	fileName: string;
 	setFilename: (fileName: string) => void;
+
+	totalFiles: number;
+	setTotalFiles: (totalFiles: number) => void;
 }
 
 export const useAppStore = create<AppState>()((set) => ({
@@ -33,4 +36,7 @@ export const useAppStore = create<AppState>()((set) => ({
 
 	isRenameModalOpen: false,
 	setIsRenameModalOpen: (open) => set((state) => ({ isRenameModalOpen: open })),
+
+	totalFiles: 0,
+	setTotalFiles: (totalFiles: number) => set((state) => ({ totalFiles })),
 }));

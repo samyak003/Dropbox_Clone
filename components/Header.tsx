@@ -2,6 +2,8 @@ import { SignInButton, SignedOut, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { ThemeToggler } from "./ThemeToggler";
+import { Button } from "./ui/button";
+import { GithubIcon } from "lucide-react";
 
 export default function Header() {
     return (
@@ -14,8 +16,13 @@ export default function Header() {
                 <h1 className="font-bold text-xl">Dropbox</h1>
             </Link>
             <div className="px-5 flex space-x-2 items-center">
-                <ThemeToggler />
+                <Button size="icon" variant={"outline"} asChild>
+                    <Link href="https://github.com/samyak003/Dropbox_Clone">
+                        <GithubIcon className="h-4 w-4" />
+                    </Link>
 
+                </Button>
+                <ThemeToggler />
                 <UserButton afterSignOutUrl="/" />
 
                 <SignedOut>
