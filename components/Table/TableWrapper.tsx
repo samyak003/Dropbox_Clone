@@ -14,14 +14,23 @@ import { Progress } from "../ui/progress";
 import prettyBytes from "pretty-bytes";
 import { useAppStore } from "@/store/store";
 import { StorageProgress } from "../ui/storage_progress";
+import Link from "next/link";
 
+type storage_details = {
+    maxStorage: number,
+    count: number,
+    storageUsed: number,
+}
 
 export default function TableWraper({ skeletonFiles, skeletonStorageDetails }: { skeletonFiles: FileType[], skeletonStorageDetails: { storageUsed: number, maxStorage: number, count: number } }) {
     const { user } = useUser();
     const [initialFiles, setInitialFiles] = useState<FileType[]>([])
     const [sort, setSort] = useState<"asc" | "desc">("desc")
-    const [storageDetails, setStorageDetails] = useState({})
-    const [totalFiles, setTotalFiles] = useAppStore(state => [state.totalFiles, state.setTotalFiles])
+    const [storageDetails, setStorageDetails] = useState<storage_details>({
+        maxStorage: 0,
+        count: 0,
+        storageUsed: 0,
+    })
     const [docs] = useCollection(
         user && query(collection(db, "users", user.id, "files"), where("available", "==", true), orderBy("timestamp", sort)),
     )
@@ -36,7 +45,7 @@ export default function TableWraper({ skeletonFiles, skeletonStorageDetails }: {
             })
             const s2 = await getDoc(doc(db, "users", user!.id))
 
-            setStorageDetails({ maxStorage: s2.data().maxStorage, count: s1.data().count, storageUsed: s1.data().storageUsed })
+            setStorageDetails({ maxStorage: s2.data()?.maxStorage, count: s1.data().count, storageUsed: s1.data().storageUsed })
         }
         unsubscribe()
     }, [initialFiles])

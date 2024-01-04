@@ -12,9 +12,13 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-export function ThemeToggler() {
+export function ThemeToggler({ pro }: { pro: boolean }) {
     const { setTheme } = useTheme()
-
+    React.useEffect(() => {
+        if (!pro) {
+            setTheme("light")
+        }
+    }, [pro])
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -31,7 +35,7 @@ export function ThemeToggler() {
                 <DropdownMenuItem onClick={() => setTheme("dark")}>
                     Dark
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("system")}>
+                <DropdownMenuItem onClick={() => setTheme("system")} disabled={!pro}>
                     System
                 </DropdownMenuItem>
             </DropdownMenuContent>
