@@ -15,9 +15,6 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
-import { FileType } from "@/typings"
-import { Button } from "../ui/button"
-import { TrashIcon } from "lucide-react"
 import { DeleteModal } from "../DeleteModal"
 import RenameModal from "../RenameModal"
 

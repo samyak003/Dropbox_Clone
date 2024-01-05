@@ -8,13 +8,10 @@ import { useUser } from "@clerk/nextjs";
 import { useEffect, useState } from "react";
 import { collection, count, doc, getAggregateFromServer, getDoc, orderBy, query, sum, where } from "firebase/firestore";
 import { db } from "@/firebase";
-import { useCollection, useCollectionData, useDocumentData, } from "react-firebase-hooks/firestore"
+import { useCollection, } from "react-firebase-hooks/firestore"
 import { Skeleton } from "../ui/skeleton";
-import { Progress } from "../ui/progress";
 import prettyBytes from "pretty-bytes";
-import { useAppStore } from "@/store/store";
 import { StorageProgress } from "../ui/storage_progress";
-import Link from "next/link";
 
 type storage_details = {
     maxStorage: number,
@@ -38,7 +35,6 @@ export default function TableWraper({ skeletonFiles, skeletonStorageDetails }: {
     useEffect(() => {
         if (!user) return
         const unsubscribe = async () => {
-            console.log("Update")
             const s1 = await getAggregateFromServer(collection(db, "users", user!.id, "files"), {
                 storageUsed: sum("size"),
                 count: count(),

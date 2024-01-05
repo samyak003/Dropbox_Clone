@@ -5,10 +5,10 @@ import { addDoc, collection, doc, getAggregateFromServer, getDoc, serverTimestam
 import { useState } from 'react'
 import DropzoneComponent from 'react-dropzone'
 import { db, storage } from "../firebase"
-import { getDownloadURL, ref, uploadBytes, uploadBytesResumable } from 'firebase/storage'
+import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 import ProcessDialog from './ProcessDialog'
 import { useAppStore } from '@/store/store'
-import { toast, useToast } from './ui/use-toast'
+import { useToast } from './ui/use-toast'
 import { ToastAction } from './ui/toast'
 import Link from 'next/link'
 export default function Dropzone({ pro }: { pro: boolean }) {
@@ -20,7 +20,6 @@ export default function Dropzone({ pro }: { pro: boolean }) {
     const onDrop = (acceptedFiles: File[]) => {
         acceptedFiles.forEach(file => {
             const reader = new FileReader()
-            console.log("Readed")
             reader.onabort = () => toast({ description: "File reading was aborted", variant: "destructive" })
             reader.onerror = () => toast({ description: "File reading was failed", variant: "destructive" })
             reader.onload = async () => {
@@ -42,7 +41,6 @@ export default function Dropzone({ pro }: { pro: boolean }) {
         })
         const userDoc = await getDoc(doc(db, `users/${user.id}`))
         if (userDoc.data()?.maxStorage < storageUsed.data().storageUsed + selectedFile.size) {
-            console.log(pro)
             toast({
                 variant: "destructive",
                 action: !pro ? (<ToastAction altText="Buy Storage"><Link href="/pro">Buy Storage</Link></ToastAction>) : undefined,
@@ -111,7 +109,7 @@ export default function Dropzone({ pro }: { pro: boolean }) {
     }
 
 
-    const maxsize = 1000000 //100mb
+    const maxsize = 104857600  //100mb
 
     return (
         <DropzoneComponent minSize={0} maxSize={!pro ? maxsize : undefined} multiple={false} onDropRejected={(message) => { createToast(message[0].errors[0].code) }} onFileDialogCancel={() => createToast("Operation cancelled")} onError={(e) => { createToast(e.message) }} onDrop={onDrop} >

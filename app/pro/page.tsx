@@ -1,67 +1,65 @@
-import { BellRing, Check } from "lucide-react"
+"use client"
+import { loadStripe } from '@stripe/stripe-js';
+import { useEffect, useState } from "react";
+import { useToast } from "@/components/ui/use-toast";
+import { useUser } from "@clerk/nextjs";
+import { Plan } from '@/typings';
+import PricingCard from '@/components/PricingCard';
+import { ToastAction } from '@radix-ui/react-toast';
+import Link from 'next/link';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
+import { db } from '@/firebase';
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-} from "@/components/ui/card"
+loadStripe(
+    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string
+);
 
-type plan = {
-    title: string,
-    price: string,
-    description: string,
-    features: string[],
-    forSale: boolean,
-}
-
-function PricingCard({ plan }: { plan: plan }) {
-    return (
-        <Card className={cn("w-[380px]")}>
-            <CardHeader>
-                <p className="text-[#0160FE] font-semibold text-lg">{plan.title}</p>
-                <p className="text-5xl font-bold">₹{plan.price}</p>
-                <CardDescription>{plan.description}</CardDescription>
-            </CardHeader>
-            <hr className="p-2 w-[80%] mx-auto" />
-            <CardContent className="grid gap-4">
-                <div>
-                    {plan.features.map((feature, index) => (
-                        <div
-                            key={index}
-                            className="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0"
-                        >
-                            <span className="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500" />
-                            <div className="space-y-1">
-                                <p className="text-sm font-medium leading-none">
-                                    {feature}
-                                </p>
-
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </CardContent>
-            <CardFooter>
-                <Button className="w-full" disabled={!plan.forSale}>
-                    Buy Now
-                </Button>
-            </CardFooter>
-        </Card>
-    )
-}
-
-const plans: plan[] = [
-    {
-        title: "Free", price: "0", description: "Always at your fingertips. Enjoy basic file storage for free.", features: ["500MB storage", "File uploads upto 100mb", "Light Theme"], forSale: false
-    },
-    { title: "Pro", price: "1000", description: "More than storage, it's control. Take charge of your data with the Pro plan.", features: ["1GB storage", "No size restriction", "Light & Dark Mode"], forSale: true }
-]
 
 export default function Pro() {
+    const [plans, setPlans] = useState<Plan[]>([
+        {
+            title: "Free", price: "0", description: "Always at your fingertips. Enjoy basic file storage for free.", features: ["500MB storage", "File uploads upto 100mb", "Light Theme"], forSale: false
+        },
+        { title: "Pro", price: "1000", description: "More than storage, it's control. Take charge of your data with the Pro plan.", features: ["1GB storage", "No size restriction", "Light & Dark Mode"], forSale: true }
+    ])
+    const { user } = useUser()
+    const { toast } = useToast()
+    const updatePlan = () => {
+        const updatedPlans = plans.map((plan, index) => {
+            if (index === 1) {
+                return { ...plan, forSale: false };
+            }
+            return plan;
+        });
+
+        setPlans(updatedPlans);
+    }
+    useEffect(() => {
+        if (!user) return
+        getDoc(doc(db, `users/${user.id}`)).then((snapshot) => {
+            if (snapshot?.data().pro) {
+                updatePlan()
+            }
+        })
+    }, [user])
+    useEffect(() => {
+        const unsubcribe = () => {
+            const query = new URLSearchParams(window.location.search);
+            if (query.get('success')) {
+                updateDoc(doc(db, `users/${query.get("userId")}`), {
+                    pro: true,
+                    maxStorage: 1000000000,
+                })
+                updatePlan()
+                toast({ variant: "success", description: 'Order placed!', action: <ToastAction altText='Go to Dashboard'><Link href="/dashboard">Go to Dashboard</Link></ToastAction> });
+            }
+
+            if (query.get('canceled')) {
+                toast({ variant: "destructive", description: 'Order canceled' });
+            }
+        }
+        return () => unsubcribe()
+    }, [])
     return (
         <div className="p-4">
             <div className="container text-center mb-10">
@@ -70,9 +68,9 @@ export default function Pro() {
             </div>
 
             <div className="contaner flex space-x-3 justify-center items-center mx-auto">
-                <PricingCard plan={plans[0]} />
-                <PricingCard plan={plans[1]} />
+                <PricingCard plan={plans[0]} userId={user?.id as string} />
+                <PricingCard plan={plans[1]} userId={user?.id as string} />
             </div>
         </div>
     )
-}
+} 

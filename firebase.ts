@@ -15,8 +15,8 @@ const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 const storage = getStorage(app);
-if (true) {
-	connectFirestoreEmulator(db, "localhost", 8080);
-	connectStorageEmulator(storage, "localhost", 9199);
-}
+// if (true) {
+// 	connectFirestoreEmulator(db, "localhost", 8080);
+// 	connectStorageEmulator(storage, "localhost", 9199);
+// }
 export { db, storage };

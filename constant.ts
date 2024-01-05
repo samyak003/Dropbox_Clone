@@ -11,6 +11,7 @@ export const COLOR_EXTENSION_MAP: { [key: string]: string } = {
 	jpeg: "#FFD700", // Yellow for jpg
 	png: "#00FF00", // Green for png
 	mp3: "#FF4500", // Orange for mp3
+	wav: "#FF4500", // Orange for mp3
 	mp4: "#8A2BE2", // Blue Violet for mp4
 	txt: "#808080", // Gray for txt
 	zip: "#FF6347", // Tomato for zip

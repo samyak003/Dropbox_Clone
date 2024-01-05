@@ -8,7 +8,6 @@ import prettyBytes from "pretty-bytes"
 import { FileIcon, defaultStyles } from 'react-file-icon';
 import { Button } from "../ui/button";
 import { useAppStore } from "@/store/store";
-import { DeleteModal } from "../DeleteModal";
 
 const FileName = ({ props }: { props: any }) => {
     const [setFileId, setFileName, setIsRenameModalOpen, fileId] = useAppStore(state => [state.setFileId, state.setFilename, state.setIsRenameModalOpen, state.fileId])
@@ -41,17 +40,17 @@ const DeleteFile = ({ props }: { props: any }) => {
 
 export const columns: ColumnDef<FileType>[] = [
     {
-        accessorKey: "type",
+        accessorKey: "fileName",
         header: "type",
         cell: ({ renderValue, ...props }) => {
             const type = renderValue() as string;
-            const extension: string = type.split("/")[1];
-
+            const nameArray = type.split(".");
+            const extension = nameArray[nameArray.length - 1]
             return (
                 <div className="w-10">
                     <FileIcon
                         extension={extension}
-                        label={COLOR_EXTENSION_MAP[extension]}
+                        color={COLOR_EXTENSION_MAP[extension]}
                         // @ts-ignore
                         {...defaultStyles[extension]}
                     />

@@ -3,7 +3,7 @@ import TableWraper from "@/components/Table/TableWrapper"
 import { db } from "@/firebase"
 import { FileType } from "@/typings"
 import { auth } from "@clerk/nextjs"
-import { collection, count, doc, getAggregateFromServer, getDoc, getDocs, query, runTransaction, snapshotEqual, sum, where } from "firebase/firestore"
+import { collection, count, doc, getAggregateFromServer, getDoc, getDocs, query, runTransaction, sum, where } from "firebase/firestore"
 export default async function Dashboard() {
     const { userId } = auth()
     try {

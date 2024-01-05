@@ -1,4 +1,4 @@
-import { SignInButton, SignedOut, UserButton, auth, useUser } from "@clerk/nextjs";
+import { SignInButton, SignedOut, UserButton, auth } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { ThemeToggler } from "./ThemeToggler";

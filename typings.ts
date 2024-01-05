@@ -7,3 +7,10 @@ export type FileType = {
 	type: string;
 	size: number;
 };
+export type Plan = {
+	title: string;
+	price: string;
+	description: string;
+	features: string[];
+	forSale: boolean;
+};
