@@ -37,7 +37,7 @@ export default function Pro() {
     useEffect(() => {
         if (!user) return
         getDoc(doc(db, `users/${user.id}`)).then((snapshot) => {
-            if (snapshot?.data().pro) {
+            if (snapshot.exists() && snapshot?.data().pro) {
                 updatePlan()
             }
         })
