@@ -16,6 +16,7 @@ const StorageProgress = React.forwardRef<
       className
     )}
     {...props}
+
   >
     <ProgressPrimitive.Indicator
       className={`h-full w-full flex-1 ${value as number <= 60 && "bg-green-500"} ${(value as number > 60 && value as number <= 80) && "bg-yellow-400"} ${value as number > 80 && "bg-red-600"} transition-all`}

@@ -41,7 +41,6 @@ export default async function Dashboard() {
         <div className="boder-t">
             <Dropzone pro={pro} />
             <section className="container my-4">
-                <h1 className="font-bold">All files</h1>
                 <div className="">
                     <TableWraper skeletonFiles={skeletonFiles} skeletonStorageDetails={{ storageUsed: storageUsed.data().storageUsed, maxStorage: maxStorage, count: storageUsed.data().count }} />
                 </div>

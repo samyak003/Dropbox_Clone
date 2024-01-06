@@ -91,7 +91,7 @@ export default function TableWraper({ skeletonFiles, skeletonStorageDetails }: {
 
     return (
         <div className="flex flex-col space-y-5 pb-10">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-center text-center sm:justify-between items-center flex-wrap space-y-4 space-x-4">
                 <div className="w-fit">
                     <p className="my-2">Strorage Used : {prettyBytes(storageDetails.storageUsed || 0)} out of {prettyBytes(storageDetails.maxStorage || 0)}</p>
                     <StorageProgress value={(storageDetails.storageUsed / storageDetails.maxStorage) * 100} />

@@ -32,12 +32,13 @@ export default async function Header() {
             </Link>
             <div className="px-5 flex space-x-2 items-center">
                 {!pro &&
-                    <Button variant={"destructive"} asChild>
+                    <Button variant={"destructive"} className="hidden md:block" asChild>
                         <Link href="/pro">
                             Buy More Storage
                         </Link>
                     </Button>
                 }
+
                 <Button size="icon" variant={"outline"} asChild>
                     <Link href="https://github.com/samyak003/Dropbox_Clone">
                         <GithubIcon className="h-4 w-4" />
@@ -46,7 +47,7 @@ export default async function Header() {
                 </Button>
 
                 <ThemeToggler pro={pro} />
-                <UserButton afterSignOutUrl="/" />
+                <UserButton afterSignOutUrl="/" children={<Link href="/pro">Buy more storage</Link>} />
 
                 <SignedOut>
                     <SignInButton afterSignInUrl="/dashboard" mode="modal" />

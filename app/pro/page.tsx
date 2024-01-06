@@ -67,7 +67,7 @@ export default function Pro() {
                 <p className="text-lg">Get organized and access your files from anywhere, without breaking the bank.</p>
             </div>
 
-            <div className="contaner flex space-x-3 justify-center items-center mx-auto">
+            <div className="contaner flex flex-col md:flex-row  space-y-3 md:space-y-0 md:space-x-3 justify-center items-center m-auto">
                 <PricingCard plan={plans[0]} userId={user?.id as string} />
                 <PricingCard plan={plans[1]} userId={user?.id as string} />
             </div>
