@@ -47,7 +47,7 @@ export default async function Header() {
                 </Button>
 
                 <ThemeToggler pro={pro} />
-                <UserButton afterSignOutUrl="/" children={<Link href="/pro">Buy more storage</Link>} />
+                <UserButton afterSignOutUrl="/" />
 
                 <SignedOut>
                     <SignInButton afterSignInUrl="/dashboard" mode="modal" />
